@@ -1,0 +1,13 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: yo_sesame_development
+
+test:
+  <<: *default
+  database: yo_sesame_test
+
