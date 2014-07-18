@@ -2,8 +2,9 @@
 
 ### Getting Started
 
-1. `cp config/database.yml.example config/database.yml` and `cp config/secrets.yml.example config/secrets.yml`
-2. `bundle install`
-3. `rake db:create`
-4. `foreman start
-5. Profit.
+1. `cp config/database.yml.example config/database.yml`
+2. `cp config/secrets.yml.example config/secrets.yml`
+3. `bundle install`
+4. `rake db:create`
+5. `foreman start`
+6. Profit.
