@@ -14,8 +14,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'foundation-rails'
 
 gem 'unicorn'
-
 gem 'figaro'
+gem 'bcrypt', '~> 3.1.7'
 
 group :development do
   gem 'foreman'
