@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def confirm
-    user = User.where(yo_username: params[:username]).first
+    user = User.find_by(yo_username: params[:username])
     if user && user.update_attributes(yo_confirmed: true)
       render text: "todo: true"
     else
