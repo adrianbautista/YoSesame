@@ -1,6 +1,6 @@
 /.bundle
 /log/*.log
 /tmp
-/config/*.yml
+/config/database.yml
 
 .ruby-gemset
