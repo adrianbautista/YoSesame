@@ -4,3 +4,6 @@
 /config/database.yml
 
 .ruby-gemset
+
+# Ignore application configuration
+/config/application.yml
