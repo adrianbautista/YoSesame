@@ -25,6 +25,16 @@ class UsersController < ApplicationController
   def destroy
   end
 
+  def confirm
+    user = User.where(yo_username: params[:username])
+    user.yo_confirmed = true
+    if user.save
+      # TODO
+    else
+      # TODO
+    end
+  end
+
   private
 
   def user_params
