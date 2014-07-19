@@ -1,0 +1,23 @@
+= form_for @user do |f|
+  .row
+    .small-12.column
+      = f.label :email do
+        Your Email
+        = f.email_field :email, placeholder: 'vint@cerf.com'
+
+  .row
+    .small-12.column
+      = f.label :password do
+        Your Password
+        = f.password_field :password
+
+  .row
+    .small-12.column
+      = f.label :yo_username do
+        Your YO username
+        = f.text_field :yo_username, placeholder: 'LIFSON'
+
+  .row
+    .small-12.column
+      = f.submit 'Go', class: 'button'
+
