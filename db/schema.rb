@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140719171541) do
     t.string   "password_digest"
     t.string   "yo_username"
     t.datetime "yo_tfa_sent_at"
+    t.boolean  "yo_confirmed",    default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :password_digest
       t.string :yo_username
       t.datetime :yo_tfa_sent_at
+      t.boolean :yo_confirmed, default: false
 
       t.timestamps
     end
