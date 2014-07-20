@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to @user
+      redirect_to "TODO CONFIRM LANDING PAGE", alert: 'Please confirm using YO.'
     else
       render :new
     end

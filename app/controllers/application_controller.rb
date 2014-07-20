@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
     redirect_to login_path unless current_user
   end
 
+  def yo_confirmed_user!
+    redirect_to "TODO CONFIRM LANDING PAGE" unless current_user.yo_confirmed?
+  end
+
   def current_user
     @user ||= User.find(session[:user_id])
   end
