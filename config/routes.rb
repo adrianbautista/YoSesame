@@ -9,6 +9,9 @@ Rails.application.routes.draw do
 
   get 'sign-up', to: 'users#new'
   get 'login', to: 'sessions#new'
+  get 'holding', to: 'sessions#holding'
+
+  get 'dashboard', to: 'dashboard#index'
 
   root 'home#index'
 end

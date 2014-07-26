@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       if @user.yo_confirmed?
         redirect_to redirect_path, notice: 'Successfully logged in!'
       else
-        redirect_to "TODO CONFIRM LANDING PAGE", alert: 'Please confirm using YO.'
+        redirect_to holding_path, alert: 'Please confirm using YO.'
       end
     else
       render :new
@@ -25,6 +25,8 @@ class SessionsController < ApplicationController
       redirect_to redirect_path, alert: 'Sorry something went wrong'
     end
   end
+
+  def holding; end
 
 
   private
