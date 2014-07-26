@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
-  validates :email, :yo_username, presence: true, uniqueness: true
+  validates :yo_username, presence: true, uniqueness: true
 
   YO_API_ENDPOINT = 'http://api.justyo.co/yo'
 
