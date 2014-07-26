@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_and_authenticate(params[:email], params[:password])
+    @user = User.find_by_yo_username(params[:yo_username])
     if @user
       session[:user_id] = @user.id
       if @user.yo_confirmed?
@@ -33,6 +33,6 @@ class SessionsController < ApplicationController
   private
 
   def redirect_path
-    params[:redirect_path].present? ? params[:redirect_path] : root_path
+    params[:redirect_path].present? ? params[:redirect_path] : dashboard_path
   end
 end
