@@ -14,8 +14,18 @@
   <body>
 
     <div class="container">
+      
+      <% flash.each do |type, message| %>
+        <div class="row">
+          <p class="flash <%= type %>">
+            <%= message %>
+          </p>
+        </div>
+      <% end %>
+
       <%= yield %>
     </div>
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>

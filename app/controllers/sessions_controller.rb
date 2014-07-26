@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
         redirect_to holding_path, alert: 'Please confirm using YO.'
       end
     else
+      flash[:alert] = 'No user found. Sign up by sending a Yo to YOSESAME'
       render :new
     end
   end
