@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   end
 
   def send_yo_link
+    self.yo_tfa_sent_at = Time.now
+    self.save!
     RestClient.post(YO_API_ENDPOINT, api_token: ENV['YO_API_KEY'], username: yo_username, link: create_confirm_link)
   end
 
@@ -20,7 +22,8 @@ class User < ActiveRecord::Base
 
   def create_token
     token = Digest::SHA1.hexdigest("#{ENV['SECURE_CONFIRM']}#{Time.now}")
-    user.token = token
-    user.save! && return token
+    self.token = token
+    self.save!
+    token
   end
 end
