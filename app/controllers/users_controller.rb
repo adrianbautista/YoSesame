@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
   def confirm
     user = User.find_by(yo_username: params[:username])
-    if user && user.update_attributes(yo_confirmed: true)
+    if user && user.eligible_for_authentication && user.update_attributes(yo_confirmed: true)
       render text: "Success"
     else
       render text: "False"
