@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
   end
 
   def create_token
-    Digest::SHA1.hexdigest("#{ENV['SECURE_CONFIRM']}#{Time.now}")
+    token = Digest::SHA1.hexdigest("#{ENV['SECURE_CONFIRM']}#{Time.now}")
+    user.token = token
+    user.save! && return token
   end
 end
