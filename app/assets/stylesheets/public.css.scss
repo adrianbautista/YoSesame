@@ -1,0 +1,44 @@
+@import 'variables';
+@import 'foundation_and_overrides';
+
+.bolded {
+  font-weight: 700;
+  background: #fff;
+  color: $default-color;
+  padding: 0.3rem;
+}
+
+.hero-callout {
+  margin-top: 3rem;
+  text-align: center;
+
+  img {
+    max-height: 17rem;
+  }
+
+  h1 {
+    font-size: 5rem;
+    margin-bottom: 0;
+  }
+
+  h3 {
+    margin-top: -1.5rem;
+    padding-left: 2rem;
+  }
+
+  p {
+    margin-top: 2rem;
+  }
+}
+
+footer {
+  background: darken($default-color, 15%);
+  padding: 2rem 0;
+  font-size: 0.75rem;
+  text-align: center;
+  margin: 3rem 20%;
+
+  a {
+    border-bottom: 1px solid $default-color-2;
+  }
+}

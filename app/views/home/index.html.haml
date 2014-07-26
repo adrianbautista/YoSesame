@@ -1,9 +1,18 @@
-.row
-  .large-12.columns
-    %h1
-      YoSesame
+.hero-callout
+  .row
+    .large-12.columns
+      = image_tag 'ice-cream-logo.png'
+
+      %h1
+        EyeScream
+      %h3.subheader
+        a YoSesame Demo Site
+
+      %p
+        To get started and create an account, YO
+        %span.bolded
+          YOSESAME
 
 .row
-  .large-6.columns
-    %p
-      Two-Factor Authorization using the YO API
+  .large-12.columns
+    = render 'shared/footer'
