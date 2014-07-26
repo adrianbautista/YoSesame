@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      @user.send_yo_link("TODO")
       redirect_to holding_path, alert: 'Please confirm using YO.'
     else
       render :new
