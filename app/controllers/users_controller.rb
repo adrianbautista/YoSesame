@@ -2,17 +2,17 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :show, :destroy]
 
   def new
-    @user = User.new
+    @user = User.new(yo_username: params[:username])
+    if @user.save
+      @user.send_yo_link
+      render text: "Success"
+    else
+      render text: "Failure"
+    end
   end
 
   def create
     @user = User.new(user_params)
-    if @user.save
-      @user.send_yo_link
-      redirect_to holding_path, alert: 'Please confirm using YO.'
-    else
-      render :new
-    end
   end
 
   def edit
@@ -29,9 +29,10 @@ class UsersController < ApplicationController
   end
 
   def confirm
-    user = User.find_by(yo_username: params[:username])
+    user = User.find_by(token: params[:token])
     if user && user.eligible_for_authentication && user.update_attributes(yo_confirmed: true)
-      render text: "Success"
+      session[:user_id] = user.id
+      redirect_to dashboard_path
     else
       render text: "False"
     end
