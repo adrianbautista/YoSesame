@@ -18,6 +18,8 @@ gem 'unicorn'
 gem 'figaro'
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'rest-client'
+
 group :development do
   gem 'foreman'
   gem 'spring'
