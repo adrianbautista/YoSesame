@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       if @user.yo_confirmed?
         redirect_to redirect_path, notice: 'Successfully logged in!'
       else
-        @user.send_yo_link("TODO")
+        @user.send_yo_link
         redirect_to holding_path, alert: 'Please confirm using YO.'
       end
     else
