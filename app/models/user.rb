@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :email, :yo_username, presence: true, uniqueness: true
 
-  YO_API_ENDPOINT = 'http://api.justyo.co/yo'
+  YO_API_ENDPOINT = 'http://api.justyo.co/yo/'
 
   def self.find_and_authenticate(email, password)
     find_by(email: email).try(:authenticate, password)
