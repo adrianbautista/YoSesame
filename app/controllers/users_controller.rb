@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      RestClient.post('http://api.justyo.com/yo', api_token: ENV['YO_API_KEY'], username: @user.yo_username, link: "TODO LOGIN ROUTE")
       redirect_to holding_path, alert: 'Please confirm using YO.'
     else
       render :new

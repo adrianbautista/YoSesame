@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
       if @user.yo_confirmed?
         redirect_to redirect_path, notice: 'Successfully logged in!'
       else
+        RestClient.post('http://api.justyo.com/yo', api_token: ENV['YO_API_KEY'], username: @user.yo_username, link: "TODO LOGIN ROUTE")
         redirect_to holding_path, alert: 'Please confirm using YO.'
       end
     else
