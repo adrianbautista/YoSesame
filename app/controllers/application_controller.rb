@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def yo_confirmed_user!
-    redirect_to "TODO CONFIRM LANDING PAGE" unless current_user.yo_confirmed?
+    redirect_to holding_path unless current_user.yo_confirmed?
   end
 
   def current_user

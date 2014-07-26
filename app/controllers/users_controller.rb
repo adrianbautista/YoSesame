@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to "TODO CONFIRM LANDING PAGE", alert: 'Please confirm using YO.'
+      redirect_to holding_path, alert: 'Please confirm using YO.'
     else
       render :new
     end
@@ -30,9 +30,9 @@ class UsersController < ApplicationController
   def confirm
     user = User.find_by(yo_username: params[:username])
     if user && user.update_attributes(yo_confirmed: true)
-      render text: "todo: true"
+      render text: "Success"
     else
-      render text: "todo: false"
+      render text: "False"
     end
   end
 

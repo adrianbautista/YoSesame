@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :users, except: [:index] do
     collection do
-      get '/sesame' => 'users#confirm'
+      get "/sesame/#{ENV['SECURE_CONFIRM']}" => 'users#confirm'
     end
   end
 
