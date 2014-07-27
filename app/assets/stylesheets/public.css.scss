@@ -1,6 +1,10 @@
 @import 'variables';
 @import 'foundation_and_overrides';
 
+.container {
+  margin-top: 1rem;
+}
+
 .bolded {
   font-weight: 700;
   background: #fff;
