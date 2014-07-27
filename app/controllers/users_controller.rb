@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
   def confirm
     user = User.find_by(token: params[:token])
-    if user && user.eligible_for_authentication && user.update_attributes(yo_confirmed: true)
+    if user && user.eligible_for_authentication? && user.update_attributes(yo_confirmed: true)
       session[:user_id] = user.id
       redirect_to dashboard_path
     else
