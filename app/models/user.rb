@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   YO_API_ENDPOINT = 'http://api.justyo.co/yo/'
 
   def eligible_for_authentication?
-    yo_tfa_sent_at + 2.minutes < Time.now
+    yo_tfa_sent_at + 2.minutes > Time.now
   end
 
   def send_yo_link
