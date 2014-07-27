@@ -1,4 +1,6 @@
-.row
-  = form_tag "/sessions" do
-    = text_field_tag :yo_username, nil, placeholder: "Yo Username"
-    = submit_tag "Go", class: "button"
+.login
+  .row
+    .large-12.columns
+    = form_tag "/sessions" do
+      = text_field_tag :yo_username, nil, placeholder: "Yo Username"
+      = submit_tag "Go", class: "button"
