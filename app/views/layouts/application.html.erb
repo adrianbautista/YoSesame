@@ -13,9 +13,11 @@
 
   <body>
 
+    <%= render partial: 'shared/top_nav' if current_user.present?%>
+
     <div class="container">
       
-<!--       <%# flash.each do |type, message| %>
+<!--  <%# flash.each do |type, message| %>
         <div class="row">
           <p class="flash <%#= type %>">
             <%#= message %>
