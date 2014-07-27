@@ -8,6 +8,7 @@
     %ul.left
       %li
         = link_to 'a YoSesame Demo', root_path
-    %ul.right
-      %li
-        = link_to 'Logout', logout_path
+    - unless params[:controller] == 'home' && params[:action] == 'index'
+      %ul.right
+        %li
+          = link_to 'Logout', logout_path
