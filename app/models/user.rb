@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
 
   YO_API_ENDPOINT = 'http://api.justyo.co/yo/'
 
-  def eligible_for_authentication
-    yo_tfa_sent_at + 2.minutes < Time.now
+  def eligible_for_authentication?
+    yo_tfa_sent_at + 2.minutes > Time.now
   end
 
   def send_yo_link
@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
 
   private
   def create_confirm_link
-    "#{root_url}/users/sesame/#{create_token}"
+    "#{root_url}users/sesame/#{create_token}"
   end
 
   def create_token

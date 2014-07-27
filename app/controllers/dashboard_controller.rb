@@ -1,3 +1,6 @@
 class DashboardController < ApplicationController
-  def index; end
+  def index
+    # @user = User.find(session[:user_id])
+    # Yeah, yeah, I know
+  end
 end
